@@ -1,0 +1,831 @@
+{
+  "version": 4,
+  "terraform_version": "0.13.1",
+  "serial": 59,
+  "lineage": "dc5b08aa-bf6b-278d-243c-277ea8e4cef4",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_autoscaling_group",
+      "name": "asg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 1,
+          "attributes": {
+            "arn": null,
+            "availability_zones": [],
+            "capacity_rebalance": null,
+            "context": null,
+            "default_cooldown": null,
+            "default_instance_warmup": null,
+            "desired_capacity": 2,
+            "desired_capacity_type": null,
+            "enabled_metrics": null,
+            "force_delete": false,
+            "force_delete_warm_pool": false,
+            "health_check_grace_period": 300,
+            "health_check_type": null,
+            "id": "skillup-asg-jon.julian",
+            "ignore_failed_scaling_activities": false,
+            "initial_lifecycle_hook": [],
+            "instance_maintenance_policy": [],
+            "instance_refresh": [],
+            "launch_configuration": null,
+            "launch_template": [
+              {
+                "id": "lt-0e9229f9469534ca3",
+                "name": "",
+                "version": "$Latest"
+              }
+            ],
+            "load_balancers": [],
+            "max_instance_lifetime": null,
+            "max_size": 2,
+            "metrics_granularity": "1Minute",
+            "min_elb_capacity": null,
+            "min_size": 1,
+            "mixed_instances_policy": null,
+            "name": "skillup-asg-jon.julian",
+            "name_prefix": null,
+            "placement_group": null,
+            "predicted_capacity": null,
+            "protect_from_scale_in": false,
+            "service_linked_role_arn": null,
+            "suspended_processes": null,
+            "tag": [],
+            "target_group_arns": [],
+            "termination_policies": null,
+            "timeouts": null,
+            "traffic_source": [],
+            "vpc_zone_identifier": [
+              "subnet-03591229f6c0da6d8",
+              "subnet-0832b4c9a4ad2f19a"
+            ],
+            "wait_for_capacity_timeout": "10m",
+            "wait_for_elb_capacity": null,
+            "warm_pool": [],
+            "warm_pool_size": null
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_launch_template.lt",
+            "aws_subnet.private1",
+            "aws_subnet.private2"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_internet_gateway",
+      "name": "gw",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:internet-gateway/igw-0af91dc4a1b5bf24a",
+            "id": "igw-0af91dc4a1b5bf24a",
+            "owner_id": "856763248273",
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-igw-jon.julian"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-igw-jon.julian"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_launch_template",
+      "name": "lt",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:launch-template/lt-0e9229f9469534ca3",
+            "block_device_mappings": [],
+            "capacity_reservation_specification": [],
+            "cpu_options": [],
+            "credit_specification": [],
+            "default_version": 1,
+            "description": "",
+            "disable_api_stop": false,
+            "disable_api_termination": false,
+            "ebs_optimized": "",
+            "elastic_gpu_specifications": [],
+            "elastic_inference_accelerator": [],
+            "enclave_options": [],
+            "hibernation_options": [],
+            "iam_instance_profile": [
+              {
+                "arn": "",
+                "name": "skillup-instanceprofile"
+              }
+            ],
+            "id": "lt-0e9229f9469534ca3",
+            "image_id": "ami-00cae939ca4303fd5",
+            "instance_initiated_shutdown_behavior": "",
+            "instance_market_options": [],
+            "instance_requirements": [],
+            "instance_type": "t2.micro",
+            "kernel_id": "",
+            "key_name": "skillup-kp-jon.julian-001",
+            "latest_version": 1,
+            "license_specification": [],
+            "maintenance_options": [],
+            "metadata_options": [],
+            "monitoring": [],
+            "name": "skillup-lt-jon.julian",
+            "name_prefix": "",
+            "network_interfaces": [],
+            "placement": [],
+            "private_dns_name_options": [],
+            "ram_disk_id": "",
+            "security_group_names": [],
+            "tag_specifications": [],
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-ec2-jon.julian",
+              "Owner": "jon.julian",
+              "Project": "COT-CNF",
+              "Team": "SRE1"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-ec2-jon.julian",
+              "Owner": "jon.julian",
+              "Project": "COT-CNF",
+              "Team": "SRE1"
+            },
+            "update_default_version": null,
+            "user_data": "",
+            "vpc_security_group_ids": [
+              "sg-05ead577ed30e60f5"
+            ]
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_security_group.private_sg"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "private_rt",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:route-table/rtb-0a362038948ab749f",
+            "id": "rtb-0a362038948ab749f",
+            "owner_id": "856763248273",
+            "propagating_vgws": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "10.0.0.0/16",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "local",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-private_rt-jon.julian"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-private_rt-jon.julian"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "public_rt",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:route-table/rtb-07ff27923ad0be679",
+            "id": "rtb-07ff27923ad0be679",
+            "owner_id": "856763248273",
+            "propagating_vgws": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "igw-0af91dc4a1b5bf24a",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-public_rt-jon.julian"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-public_rt-jon.julian"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_internet_gateway.gw",
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "private_rt_assoc1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-013def67fde74233c",
+            "route_table_id": "rtb-0a362038948ab749f",
+            "subnet_id": "subnet-0832b4c9a4ad2f19a",
+            "timeouts": null
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_route_table.private_rt",
+            "aws_subnet.private1",
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "private_rt_assoc2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0406d6a1841e458ba",
+            "route_table_id": "rtb-0a362038948ab749f",
+            "subnet_id": "subnet-03591229f6c0da6d8",
+            "timeouts": null
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_route_table.private_rt",
+            "aws_subnet.private2",
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "public_rt_assoc1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-00eefcc9020f841f1",
+            "route_table_id": "rtb-07ff27923ad0be679",
+            "subnet_id": "subnet-0407b46a5d224f91a",
+            "timeouts": null
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_route_table.public_rt",
+            "aws_subnet.public1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "public_rt_assoc2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0ca34efce4224dc56",
+            "route_table_id": "rtb-07ff27923ad0be679",
+            "subnet_id": "subnet-064b70f6a9b03c984",
+            "timeouts": null
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_route_table.public_rt",
+            "aws_subnet.public2"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "private_sg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:security-group/sg-05ead577ed30e60f5",
+            "description": "Private security group",
+            "egress": [],
+            "id": "sg-05ead577ed30e60f5",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "3.138.181.209/32"
+                ],
+                "description": "ssh-custom",
+                "from_port": 6522,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 6522
+              }
+            ],
+            "name": "skillup-private_sg-jon.julian",
+            "name_prefix": "",
+            "owner_id": "856763248273",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-private_sg-jon.julian"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-private_sg-jon.julian"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "public_sg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:security-group/sg-08ed6f57876c7297e",
+            "description": "Public security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-08ed6f57876c7297e",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "http",
+                "from_port": 80,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 80
+              }
+            ],
+            "name": "skillup-public_sg-jon.julian",
+            "name_prefix": "",
+            "owner_id": "856763248273",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-public_sg-jon.julian"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-public_sg-jon.julian"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "private1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:subnet/subnet-0832b4c9a4ad2f19a",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-2a",
+            "availability_zone_id": "use2-az1",
+            "cidr_block": "10.0.4.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0832b4c9a4ad2f19a",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "856763248273",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-private_subnet-jon.julian-001"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-private_subnet-jon.julian-001"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "private2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:subnet/subnet-03591229f6c0da6d8",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-2b",
+            "availability_zone_id": "use2-az2",
+            "cidr_block": "10.0.5.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-03591229f6c0da6d8",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "856763248273",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-private_subnet-jon.julian-002"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-private_subnet-jon.julian-002"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "public1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:subnet/subnet-0407b46a5d224f91a",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-2a",
+            "availability_zone_id": "use2-az1",
+            "cidr_block": "10.0.2.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0407b46a5d224f91a",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "856763248273",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-public_subnet-jon.julian-001"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-public_subnet-jon.julian-001"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "public2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:subnet/subnet-064b70f6a9b03c984",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-2b",
+            "availability_zone_id": "use2-az2",
+            "cidr_block": "10.0.3.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-064b70f6a9b03c984",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "856763248273",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-public_subnet-jon.julian-002"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-public_subnet-jon.julian-002"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc",
+      "name": "myvpc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:vpc/vpc-08eb700b24961ba25",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.0.0.0/16",
+            "default_network_acl_id": "acl-0ee31c1ec0cfd347a",
+            "default_route_table_id": "rtb-09916583399cc5244",
+            "default_security_group_id": "sg-012cb7dec13bfb8f0",
+            "dhcp_options_id": "dopt-0b7af4dc1caeb2721",
+            "enable_dns_hostnames": false,
+            "enable_dns_support": true,
+            "enable_network_address_usage_metrics": false,
+            "id": "vpc-08eb700b24961ba25",
+            "instance_tenancy": "default",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_network_border_group": "",
+            "ipv6_ipam_pool_id": "",
+            "ipv6_netmask_length": 0,
+            "main_route_table_id": "rtb-09916583399cc5244",
+            "owner_id": "856763248273",
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-vpc-jon.julian"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-vpc-jon.julian"
+            }
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc_endpoint",
+      "name": "s3",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:856763248273:vpc-endpoint/vpce-0d7b3965d5ba38cf0",
+            "auto_accept": null,
+            "cidr_blocks": [
+              "18.34.252.0/22",
+              "52.219.141.0/24",
+              "18.34.72.0/21",
+              "52.219.96.0/20",
+              "52.219.224.0/21",
+              "16.12.60.0/22",
+              "52.219.232.0/22",
+              "52.219.80.0/20",
+              "3.5.128.0/22",
+              "52.219.142.0/23",
+              "3.5.132.0/23",
+              "16.12.64.0/22",
+              "52.219.212.0/22",
+              "52.219.176.0/22"
+            ],
+            "dns_entry": [],
+            "dns_options": [],
+            "id": "vpce-0d7b3965d5ba38cf0",
+            "ip_address_type": "",
+            "network_interface_ids": [],
+            "owner_id": "856763248273",
+            "policy": "{\"Statement\":[{\"Action\":\"*\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Resource\":\"*\"}],\"Version\":\"2008-10-17\"}",
+            "prefix_list_id": "pl-7ba54012",
+            "private_dns_enabled": false,
+            "requester_managed": false,
+            "route_table_ids": [
+              "rtb-0a362038948ab749f"
+            ],
+            "security_group_ids": [],
+            "service_name": "com.amazonaws.us-east-2.s3",
+            "state": "available",
+            "subnet_ids": [],
+            "tags": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-s3endpoint-jon.julian"
+            },
+            "tags_all": {
+              "GBL_CLASS_0": "SERVICE",
+              "GBL_CLASS_1": "TEST",
+              "Name": "skillup-s3endpoint-jon.julian"
+            },
+            "timeouts": null,
+            "vpc_endpoint_type": "Gateway",
+            "vpc_id": "vpc-08eb700b24961ba25"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_vpc.myvpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc_endpoint_route_table_association",
+      "name": "vpc_endpoint_assoc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "a-vpce-0d7b3965d5ba38cf04165659556",
+            "route_table_id": "rtb-0a362038948ab749f",
+            "vpc_endpoint_id": "vpce-0d7b3965d5ba38cf0"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_route_table.private_rt",
+            "aws_vpc.myvpc",
+            "aws_vpc_endpoint.s3"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
